@@ -1,0 +1,9 @@
+{% extends "residents/base.html" %}
+{% block content %}
+  
+  <form method="post" style="max-width:400px; margin:auto;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Log in</button>
+  </form>
+{% endblock %}

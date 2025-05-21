@@ -1,0 +1,21 @@
+{% extends "residents/base.html" %}
+{% block content %}
+  <h2>Delete Resident</h2>
+
+  <div style="
+       background: white;
+       padding: var(--spacing);
+       border-radius: var(--radius);
+       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+       max-width: 600px;
+       margin: auto;
+    ">
+    <p>Are you sure you want to delete <strong>{{ object.name }}</strong>?</p>
+
+    <form method="POST" style="display: flex; justify-content: flex-end; gap: var(--spacing);">
+      {% csrf_token %}
+      <a href="{% url 'resident-list-web' %}" class="btn btn-secondary">Cancel</a>
+      <button type="submit" class="btn btn-primary">Confirm Delete</button>
+    </form>
+  </div>
+{% endblock %}

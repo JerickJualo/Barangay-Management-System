@@ -1,0 +1,64 @@
+{% extends "residents/base.html" %}
+{% block content %}
+  <h2>{% if object %}Edit Resident{% else %}Add New Resident{% endif %}</h2>
+
+  <form method="POST" style="max-width: 600px; margin: auto;">
+    {% csrf_token %}
+    <div class="resident-form-inner" style="
+         background: white;
+         padding: var(--spacing);
+         border-radius: var(--radius);
+         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+         display: grid;
+         gap: var(--spacing);
+      ">
+      <!-- Name -->
+      <div style="display: flex; flex-direction: column;">
+        <label for="id_name">Name</label>
+        {{ form.name }}
+      </div>
+
+      <!-- Birthdate -->
+      <div style="display: flex; flex-direction: column;">
+        <label for="id_birthdate">Birthdate</label>
+        {{ form.birthdate }}
+      </div>
+
+      <!-- Sex & Civil Status -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing);">
+        <div style="display: flex; flex-direction: column;">
+          <label for="id_sex">Sex</label>
+          {{ form.sex }}
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <label for="id_civil_status">Civil Status</label>
+          {{ form.civil_status }}
+        </div>
+      </div>
+
+      <!-- Contact Number -->
+      <div style="display: flex; flex-direction: column;">
+        <label for="id_contact_number">Contact Number</label>
+        {{ form.contact_number }}
+      </div>
+
+      <!-- Occupation & Household -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing);">
+        <div style="display: flex; flex-direction: column;">
+          <label for="id_occupation">Occupation</label>
+          {{ form.occupation }}
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <label for="id_household">Household</label>
+          {{ form.household }}
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div style="display: flex; justify-content: flex-end; gap: var(--spacing);">
+        <a href="{% url 'resident-list-web' %}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}

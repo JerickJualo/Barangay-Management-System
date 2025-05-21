@@ -1,0 +1,57 @@
+{% extends "residents/base.html" %}
+{% block content %}
+  <h2>Residents List</h2>
+
+  <form method="GET">
+    <label for="purok">Purok:</label>
+    <input type="text" name="purok" id="purok" value="{{ request.GET.purok }}">
+
+    <label for="street">Street:</label>
+    <input type="text" name="street" id="street" value="{{ request.GET.street }}">
+
+    <label for="household">Household:</label>
+    <input type="text" name="household" id="household" value="{{ request.GET.household }}">
+
+    <button type="submit" class="btn btn-primary">Filter</button>
+  </form>
+
+  <a href="{% url 'resident-add' %}" class="btn btn-primary" style="margin-bottom: var(--spacing); display: inline-block;">
+    Add New Resident
+  </a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Birthdate</th>
+        <th>Sex</th>
+        <th>Civil Status</th>
+        <th>Contact</th>
+        <th>Occupation</th>
+        <th>Household</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for resident in object_list %}
+      <tr>
+        <td>{{ resident.name }}</td>
+        <td>{{ resident.birthdate|date:"M j, Y" }}</td>
+        <td>{{ resident.sex }}</td>
+        <td>{{ resident.civil_status }}</td>
+        <td>{{ resident.contact_number }}</td>
+        <td>{{ resident.occupation }}</td>
+        <td>{{ resident.household }}</td>
+        <td>
+          <a href="{% url 'resident-update' resident.pk %}" class="btn btn-secondary">Edit</a>
+          <a href="{% url 'resident-delete' resident.pk %}" class="btn btn-primary">Delete</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="8" style="text-align:center;">No residents found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
