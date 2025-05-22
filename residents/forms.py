@@ -21,5 +21,5 @@ class ResidentForm(forms.ModelForm):
         model = Resident
         fields = [
             'name', 'birthdate', 'sex', 'civil_status',
-            'contact_number', 'occupation', 'household'
+            'contact_number', 'occupation', 'household', 'email_address', 'purok_no'
         ]

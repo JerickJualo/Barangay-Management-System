@@ -30,6 +30,9 @@ class Resident(models.Model):
     contact_number = models.CharField(max_length = 15)
     occupation = models.CharField(max_length=30, blank=True, null=True)
     household = models.ForeignKey(Household, on_delete=models.CASCADE, related_name='residents')
+    email_address = models.CharField(max_length = 30, blank = True, null = True)
+    purok_no = models.ForeignKey(Purok, on_delete= models.CASCADE, related_name= 'residents', blank = True)
+    
 
     def __str__(self):
         return self.name

@@ -54,6 +54,17 @@
         </div>
       </div>
 
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing);">
+        <div style="display: flex; flex-direction: column;">
+          <label for="id_email_addess">Email Address</label>
+          {{ form.email_address }}
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <label for="id_purok_no">Purok NO.</label>
+          {{ form.purok_no }}
+        </div>
+      </div>
+
       <!-- Buttons -->
       <div style="display: flex; justify-content: flex-end; gap: var(--spacing);">
         <a href="{% url 'resident-list-web' %}" class="btn btn-secondary">Cancel</a>

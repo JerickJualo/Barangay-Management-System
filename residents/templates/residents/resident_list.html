@@ -15,6 +15,8 @@
     <button type="submit" class="btn btn-primary">Filter</button>
   </form>
 
+
+
   <a href="{% url 'resident-add' %}" class="btn btn-primary" style="margin-bottom: var(--spacing); display: inline-block;">
     Add New Resident
   </a>
@@ -29,6 +31,8 @@
         <th>Contact</th>
         <th>Occupation</th>
         <th>Household</th>
+        <th>Email Address</th>
+        <th>Purok NO.</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -42,6 +46,8 @@
         <td>{{ resident.contact_number }}</td>
         <td>{{ resident.occupation }}</td>
         <td>{{ resident.household }}</td>
+        <td>{{ resident.email_address}}</td>
+        <td>{{ resident.purok_no}}</td>
         <td>
           <a href="{% url 'resident-update' resident.pk %}" class="btn btn-secondary">Edit</a>
           <a href="{% url 'resident-delete' resident.pk %}" class="btn btn-primary">Delete</a>
