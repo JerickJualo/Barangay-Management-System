@@ -1,5 +1,7 @@
 # Barangay Management System
 
+# DEPLOYED URL BELOW!
+
 A Django-based web application designed to manage the hierarchical data of a Barangay Amoslog in Placer, Surigao Del Norte:
 
 Puroks, Streets, Households, and Residents. 
@@ -51,4 +53,12 @@ python manage.py createsuperuser
 
 python manage.py runserver
 
+# BARANGAY MANAGEMENT SYSTEM BY JUALO DEPLOYED URL:
+
+# https://barangay-management-system-vsoj.onrender.com
+
+# LOG-IN ACCOUNT:
+
+# USERNAME: dummyacc
+# PASSWORD: realpassword
 
