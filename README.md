@@ -59,6 +59,6 @@ python manage.py runserver
 
 # LOG-IN ACCOUNT:
 
-# USERNAME: dummyacc
+# USERNAME: instructor
 # PASSWORD: realpassword
 
